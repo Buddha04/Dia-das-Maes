@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff1f2; /* Fundo rosa bem clarinho */
+    text-align: center;
+}
+
+.hidden { display: none !important; }
+
+/* BOTÃO CORAÇÃO */
+.botao-ler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 350px; /* Coração maior */
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-ler svg {
+    fill: #ffcdd2; /* Rosa Bebê */
+    filter: drop-shadow(0 10px 20px rgba(216, 27, 96, 0.2));
+    animation: pulsar 1.5s infinite ease-in-out;
+}
+
+.texto-botao {
+    position: absolute;
+    font-family: 'Dancing Script', cursive;
+    color: #d81b60;
+    font-size: 28px;
+    pointer-events: none;
+}
+
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* CARTA DECORATIVA */
+.carta-box {
+    position: relative;
+    background: white;
+    padding: 50px;
+    border: 10px double #f8bbd0; /* Borda decorativa dupla */
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    max-width: 500px;
+    animation: surgindo 1s ease-out;
+}
+
+.carta-header {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    color: #ad1457;
+    margin-bottom: 10px;
+}
+
+.divisor {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #f8bbd0, transparent);
+    margin-bottom: 20px;
+}
+
+.carta-texto {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4a148c;
+}
+
+.carta-image {
+    position: absolute;
+    width: 80px;
+    top: -40px;
+}
+
+.carta-image.esq { left: -30px; transform: rotate(-15deg); }
+.carta-image.dir { right: -30px; transform: rotate(15deg); }
+
+@keyframes surgindo {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
